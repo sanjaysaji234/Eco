@@ -2,6 +2,8 @@
 
 ## Overview
 
+<img width="1895" height="950" alt="Image" src="https://github.com/user-attachments/assets/d63444df-0fcb-4637-a3bf-ab58f06efb9c" />
+
 This project is an **open-source ecosystem simulation** built on a **procedurally generated hexagonal world**. It explores how small environmental or population changes can influence an ecosystem and lead to larger, sometimes unexpected outcomes.
 
 The simulation models a simplified ecological system composed of interacting entities such as **plants, trees, humans, herbivores, and carnivores**. Each species follows a set of behavioral rules that determine how it consumes resources, interacts with other entities, and survives within the environment.
