@@ -169,15 +169,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 239cfc5ad4723404abe248f3f233e8e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.89066
+      value: 37.39835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 239cfc5ad4723404abe248f3f233e8e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.50981
+      value: 3.03934
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 239cfc5ad4723404abe248f3f233e8e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 85.4161
+      value: 84.35151
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 239cfc5ad4723404abe248f3f233e8e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -261,6 +261,6 @@ MonoBehaviour:
   amountPerTick: 10
   hexRenderer: {fileID: 0}
   targetMaterialIndex: 2
-  emptyColor: {r: 0.40784317, g: 0.74509805, b: 0.43529415, a: 1}
-  fullColor: {r: 0.1215686, g: 0.96862745, b: 0.39059672, a: 1}
-  halfColor: {r: 0.09411765, g: 0.75686276, b: 0.42134133, a: 1}
+  emptyColor: {r: 0.40784317, g: 0.74509805, b: 0.43529415, a: 0.039215688}
+  fullColor: {r: 0, g: 0.79607844, b: 0.4392157, a: 1}
+  halfColor: {r: 0.33716622, g: 0.7735849, b: 0.577949, a: 0.40784314}
