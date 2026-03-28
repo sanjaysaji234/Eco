@@ -242,6 +242,12 @@ public class HerbivoreActions : MonoBehaviour
 
     private void EatFood()
     {
+        if (grassManager == null || grassManager.grassAmount <= 0)
+        {
+            stats.isEating = false;
+            currentState = HerbivoreStates.SeekFood;
+            return;
+        }
         eatTimer += Time.deltaTime;
         if (eatTimer > eatspeed)    
         {

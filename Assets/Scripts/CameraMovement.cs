@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private float cameraSpeed = 5f;
     UiInteractions uiInteractions;
     Camera cam;
+    [SerializeField] private Slider cameraSpanSlider;
+    [SerializeField]private float scrollSensitivity=2f;
     private void Start()
     {
         cam= GetComponent<Camera>();
@@ -13,6 +16,12 @@ public class CameraMovement : MonoBehaviour
     }
     private void Update()
     {
+
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll != 0f)
+        {
+            cameraSpanSlider.value -= scroll * scrollSensitivity;
+        }
         // 1. Get input from standard Unity axes (returns -1, 0, or 1)
         // A/Left Arrow = -1, D/Right Arrow = 1
         float moveX = Input.GetAxisRaw("Horizontal");

@@ -28,8 +28,6 @@ public class HexWorldGenerator : MonoBehaviour
         Water,
         Grass
     }
-
-    UiInteractions uiInteractions;
     CloudAnimationEvents cloudAnimationEvents;
 
     public event EventHandler OnMapGenerated;

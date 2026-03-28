@@ -9,7 +9,7 @@ public class AnimalSpawner : MonoBehaviour
     [SerializeField] float manThreshold=0.3f,ManFrequency=10f; 
     [SerializeField] float tigerThreshold = 0.3f, tigerFrequency = 10f;
     [SerializeField] float seed;
-    [SerializeField] Transform manHolder, deerHolder,tigerHolder;
+    public Transform manHolder, deerHolder,tigerHolder;
 
     private void Start()
     {

@@ -36,6 +36,7 @@ public class HerbivoreReproduction : MonoBehaviour
         reproductionTime=Random.Range(7*60, 11*60);
         HexCell spawnCell = herbstats.FindClosestCell();
         GameObject baby = animalSpawner.SpawnEntity(deer, spawnCell);
+        baby.transform.SetParent(animalSpawner.deerHolder);
         animalCount.deerCount++;
 
 

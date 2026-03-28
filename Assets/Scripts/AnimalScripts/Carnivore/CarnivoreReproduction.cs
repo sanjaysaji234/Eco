@@ -36,6 +36,7 @@ public class CarnivoreReproduction : MonoBehaviour
         reproductionTime = Random.Range(5 * 60, 7.5f * 60);
         HexCell spawnCell = carnstats.FindClosestCell();
         GameObject baby = animalSpawner.SpawnEntity(tiger, spawnCell);
+        baby.transform.SetParent(animalSpawner.tigerHolder);
         animalCount.tigerCount++;
         // Assign world reference like AnimalSpawner does
         CarnivoreStats babyStats = baby.GetComponent<CarnivoreStats>();

@@ -5,6 +5,7 @@ public class CarnivoreActions : MonoBehaviour
 {
 
     [Header("EatSettings"), SerializeField] float eatspeed = 3f, eatTimer = 0;
+    [SerializeField] private float failedFindFoodCoolDown=0f,coolDownTimer=3f;
     private bool isWaiting = false;
     [SerializeField] float waitTimer = 1f;
     HexCell currentTarget;
@@ -38,6 +39,10 @@ public class CarnivoreActions : MonoBehaviour
 
     private void Update()
     {
+        if (failedFindFoodCoolDown > 0)
+        {
+            failedFindFoodCoolDown-= Time.deltaTime;
+        }
         if (currentState == CarnivoreStates.Wander)
         {
             Wander();
@@ -127,10 +132,16 @@ public class CarnivoreActions : MonoBehaviour
         stats.moveSpeed = stats.walkspeed;
         // 1. Find food and calculate a path (only do this once)
         // REMOVED "&& currentTarget == null" so it forces a search!
+
+        if (failedFindFoodCoolDown > 0)
+        {
+            currentState = CarnivoreStates.Wander;
+            return;
+        }
         if (targetDeer == null || targetDeer.gameObject == null)
         {
             targetDeer = stats.FindClosestDeer();
-
+            failedFindFoodCoolDown = coolDownTimer;
             if (targetDeer == null)
             {
                 currentState = CarnivoreStates.Wander; // Give up, no grass
@@ -229,8 +240,11 @@ public class CarnivoreActions : MonoBehaviour
 }
     private void EatFood()
     {
-
-        deerStats.life = 0;
+        if (deerStats != null)
+        {
+            deerStats.life = 0;
+        }
+       
         stats.isEating = true;
         eatTimer += Time.deltaTime;
         if (eatTimer > eatspeed)
@@ -240,8 +254,12 @@ public class CarnivoreActions : MonoBehaviour
             stats.isEating = false;
             
             HexCell newHome=stats.FindClosestCell();
-            stats.homeX = newHome.x;
-            stats.homeZ = newHome.z;
+            if (newHome!=null)
+            {
+                stats.homeX = newHome.x;
+                stats.homeZ = newHome.z;
+            }
+            currentState = CarnivoreStates.Wander;
         }
     }
 

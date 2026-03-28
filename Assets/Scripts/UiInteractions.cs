@@ -1,9 +1,11 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiInteractions : MonoBehaviour
 {
+    [SerializeField]private Slider simSpeedSlider;
     public float cameraSpan = 1f;
     [Range(0,2)] public float timeSpeed=1f;
     float beforePauseTimeSpeed;
@@ -12,7 +14,7 @@ public class UiInteractions : MonoBehaviour
     public void Pause()
     {
         beforePauseTimeSpeed=timeSpeed;
-        timeSpeed = 0f;
+        simSpeedSlider.value = 0f;
         pauseMenu.SetActive(true);
         gameObject.SetActive(false);
     }
@@ -31,7 +33,9 @@ public class UiInteractions : MonoBehaviour
 
     public void NewMap()
     {
-        timeSpeed = 1f;
+       
+        simSpeedSlider.value = 2f;
+
         cloudeAnimator.Play("CloudCover");
         pauseMenu.SetActive(false);
         gameObject.SetActive (false);
