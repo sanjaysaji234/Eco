@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class HexWorldGenerator : MonoBehaviour
@@ -8,6 +9,7 @@ public class HexWorldGenerator : MonoBehaviour
     [SerializeField] GameObject hexPrefab, hexWaterPrefab,hexGrassPrefab;
     [SerializeField] GameObject[] hexTreesPrefab;
     [SerializeField] Transform waterGridParent, treeGridParent, landGridParent, grassGridPareent;
+    AnimalSpawner animalSpawner;
 
     public float seed = 0;
     public float waterNoiseFrequency = 5f;
@@ -27,12 +29,49 @@ public class HexWorldGenerator : MonoBehaviour
         Grass
     }
 
+    UiInteractions uiInteractions;
+    CloudAnimationEvents cloudAnimationEvents;
+
+    public event EventHandler OnMapGenerated;
     void Awake()
     {
         grids = new HexCell[size, size];
         GenerateHexWorld();
         LinkNeighbors();
     }
+
+    private void Start()
+    {
+        animalSpawner = FindAnyObjectByType<AnimalSpawner>();
+        cloudAnimationEvents = FindAnyObjectByType<CloudAnimationEvents>();
+        cloudAnimationEvents.OnCloudCovered += CloudAnimationEvents_OnCloudCovered;
+    }
+
+    private void CloudAnimationEvents_OnCloudCovered(object sender, EventArgs e)
+    {
+        foreach (Transform child in landGridParent)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in waterGridParent)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in grassGridPareent)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in treeGridParent)
+        {
+            Destroy(child.gameObject);
+        }
+        seed += 200;
+        grids = new HexCell[size, size];
+        GenerateHexWorld();
+        LinkNeighbors();
+        OnMapGenerated?.Invoke(this, EventArgs.Empty);
+    }
+
 
     void GenerateHexWorld()
     {
@@ -52,7 +91,7 @@ public class HexWorldGenerator : MonoBehaviour
                         break;
 
                     case GridType.Tree:
-                        prefab = hexTreesPrefab[Random.Range(0, hexTreesPrefab.Length)];
+                        prefab = hexTreesPrefab[UnityEngine.Random.Range(0, hexTreesPrefab.Length)];
                         break;
 
                     case GridType.Grass:

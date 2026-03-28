@@ -15,7 +15,27 @@ public class AnimalSpawner : MonoBehaviour
     {
         animalCount = FindAnyObjectByType<AnimalCount>();
         spawnAnimals();
-        
+        world.OnMapGenerated += World_OnMapGenerated;
+    }
+
+    private void World_OnMapGenerated(object sender, System.EventArgs e)
+    {
+        foreach (Transform child in manHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in deerHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in tigerHolder)
+        {
+            Destroy(child.gameObject);
+        }
+        animalCount.deerCount = 0;
+        animalCount.tigerCount = 0;
+        seed += 100;
+        spawnAnimals();
     }
 
     private void spawnAnimals()
@@ -34,12 +54,12 @@ public class AnimalSpawner : MonoBehaviour
                 float deerValue = Mathf.PerlinNoise((x + seed+1000) / deerFrequency, (z + seed+1000) / deerFrequency);
                 float tigerValue= Mathf.PerlinNoise((x + seed + 2000) / tigerFrequency, (z + seed + 2000) / tigerFrequency);
 
-                if (manValue < manThreshold)
-                {
-                    GameObject entity=SpawnEntity(man,cell);
-                    entity.transform.SetParent(manHolder);
-                }
-                else if (deerValue < deerThreshold)
+                //if (manValue < manThreshold)
+                //{
+                //    GameObject entity=SpawnEntity(man,cell);
+                //    entity.transform.SetParent(manHolder);
+                //}
+                if (deerValue < deerThreshold)
                 {
                     GameObject entity= SpawnEntity(deer, cell);
                     animalCount.deerCount++;
