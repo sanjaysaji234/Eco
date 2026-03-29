@@ -64,9 +64,6 @@ Project Structure
 - Predator–prey interactions
 - Hunting strategies
 
-### Human Interaction
-- Resource consumption
-- Environmental impact
 
 ### Plant Systems
 - Growth cycles
@@ -84,10 +81,17 @@ Project Structure
 
 ## Project Goal
 
-The objective of this simulation is to demonstrate how **interconnected systems react to changing conditions**.
+The primary objective of this project is to provide game developers with a robust, procedurally generated hexagonal framework featuring a fully functional ecosystem.
 
-Small interventions—such as altering population counts or resource availability—can propagate through the ecosystem and create **complex cascading effects**. The simulation aims to provide insight into how delicate ecological balance can be and how systems evolve over time.
+As an open-source tool, it is designed for:
 
+Scalability: The modular architecture allows developers to modify and scale the ecosystem complexity to fit their specific project needs.
+
+Developer Sandbox: A ready-to-use foundation for games requiring complex environmental logic or resource management.
+
+System Dynamics: To demonstrate how "butterfly effects"—such as minor changes in food availability or predator population—can cascade through the system, potentially leading to the extinction of entire species.
+
+This project aims to bridge the gap between complex ecological theory and practical game world implementation.
 ---
 
 ## Tech Stack
