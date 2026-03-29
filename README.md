@@ -22,6 +22,36 @@ The project is designed both as a **learning tool and an experimental sandbox** 
 - Open-source project designed for experimentation
 
 ---
+##Prerequisites
+Unity Version: 2022.3 LTS (Recommended)
+
+Git: Installed on your local machine
+
+Installation & Setup
+Clone the repository:
+
+Bash
+git clone https://github.com/snj4y/ecosystem-simulation.git
+Open in Unity Hub:
+
+Open Unity Hub and click Add > Add project from disk.
+
+Navigate to the cloned folder and select it.
+
+Launch Project:
+
+Select the correct Editor version and wait for Unity to import assets and resolve packages.
+
+Open the main scene located in Assets/Scenes/.
+
+Project Structure
+/Scripts/Grid: Contains logic for hexagonal math and procedural generation.
+
+/Scripts/Entities: AI behavior and state machines for species.
+
+/Prefabs: Pre-configured 3D models for terrain and environment.
+
+/Materials: URP/Standard shaders for the low-poly/cinematic aesthetic.
 
 ## Planned Systems
 
