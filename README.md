@@ -1,100 +1,128 @@
-# Ecosystem Simulation (Hex Grid Based)
-
-## Overview
-
+Ecosystem Simulation (Hex Grid Based)
+Overview
 <img width="1895" height="950" alt="Image" src="https://github.com/user-attachments/assets/d63444df-0fcb-4637-a3bf-ab58f06efb9c" />
 
-This project is an **open-source ecosystem simulation** built on a **procedurally generated hexagonal world**. It explores how small environmental or population changes can influence an ecosystem and lead to larger, sometimes unexpected outcomes.
+This project is an open-source ecosystem simulation built on a procedurally generated hexagonal world. It explores how small environmental or population changes can influence an ecosystem and lead to larger, sometimes unexpected outcomes.
 
-The simulation models a simplified ecological system composed of interacting entities such as **plants, trees, humans, herbivores, and carnivores**. Each species follows a set of behavioral rules that determine how it consumes resources, interacts with other entities, and survives within the environment.
+The simulation models a simplified ecological system composed of interacting entities such as plants, trees, humans, herbivores, and carnivores. Each species follows a set of behavioral rules that determine how it consumes resources, interacts with other entities, and survives within the environment.
 
-By adjusting ecosystem variables such as **species population, food availability, or environmental conditions**, users can observe how these changes affect the balance of the ecosystem.
+By adjusting ecosystem variables such as species population, food availability, or environmental conditions, users can observe how these changes affect the balance of the ecosystem.
 
-The project is designed both as a **learning tool and an experimental sandbox** for understanding ecological interactions and system dynamics.
+The project is designed both as a learning tool and an experimental sandbox for understanding ecological interactions and system dynamics.
 
----
+Features
+Procedurally generated hexagonal world
 
-## Features
+Terrain generation with water, land, and vegetation
 
-- Procedurally generated **hexagonal world**
-- Terrain generation with **water, land, and vegetation**
-- **Clustered forest generation** using Perlin noise
-- Multiple tree types
-- Modular and extensible **entity architecture**
-- Open-source project designed for experimentation
+Clustered forest generation using Perlin noise
 
----
+Multiple tree types
 
-## Planned Systems
+Modular and extensible entity architecture
 
-### Herbivore Behavior
-- Movement
-- Grazing
-- Reproduction
+Open-source project designed for experimentation
 
-### Carnivore Behavior
-- Predator–prey interactions
-- Hunting strategies
+🚀 Getting Started
+Prerequisites
+Unity Version: 2022.3 LTS (Recommended)
 
-### Human Interaction
-- Resource consumption
-- Environmental impact
+Git: Installed on your local machine
 
-### Plant Systems
-- Growth cycles
-- Resource regeneration
+Installation & Setup
+Clone the repository:
 
-### Ecosystem Dynamics
-- Population feedback loops
-- Resource competition
+Bash
+git clone https://github.com/snj4y/ecosystem-simulation.git
+Open in Unity Hub:
 
-### User Interaction
-- Adjustable ecosystem variables
-- Simulation control and observation tools
+Open Unity Hub and click Add > Add project from disk.
 
----
+Navigate to the cloned folder and select it.
 
-## Project Goal
+Launch Project:
 
-The objective of this simulation is to demonstrate how **interconnected systems react to changing conditions**.
+Select the correct Editor version and wait for Unity to import assets and resolve packages.
 
-Small interventions—such as altering population counts or resource availability—can propagate through the ecosystem and create **complex cascading effects**. The simulation aims to provide insight into how delicate ecological balance can be and how systems evolve over time.
+Open the main scene located in Assets/Scenes/.
 
----
+Project Structure
+/Scripts/Grid: Contains logic for hexagonal math and procedural generation.
 
-## Tech Stack
+/Scripts/Entities: AI behavior and state machines for species.
 
-- **Unity**
-- **C#**
-- **Procedural generation using Perlin noise**
-- **Hexagonal grid world simulation**
+/Prefabs: Pre-configured 3D models for terrain and environment.
 
----
+/Materials: URP/Standard shaders for the low-poly/cinematic aesthetic.
 
-## Project Status
+Planned Systems
+Herbivore Behavior
+Movement
 
-**Early Development**
+Grazing
+
+Reproduction
+
+Carnivore Behavior
+Predator–prey interactions
+
+Hunting strategies
+
+Human Interaction
+Resource consumption
+
+Environmental impact
+
+Plant Systems
+Growth cycles
+
+Resource regeneration
+
+Ecosystem Dynamics
+Population feedback loops
+
+Resource competition
+
+User Interaction
+Adjustable ecosystem variables
+
+Simulation control and observation tools
+
+Project Goal
+The objective of this simulation is to demonstrate how interconnected systems react to changing conditions.
+
+Small interventions—such as altering population counts or resource availability—can propagate through the ecosystem and create complex cascading effects. The simulation aims to provide insight into how delicate ecological balance can be and how systems evolve over time.
+
+Tech Stack
+Unity
+
+C#
+
+Procedural generation using Perlin noise
+
+Hexagonal grid world simulation
+
+Project Status
+Early Development
 
 Current development is focused on:
 
-- World generation
-- Terrain systems
-- Environmental structures
+World generation
 
-Future updates will introduce **species behavior, ecosystem dynamics, and interactive simulation controls**.
+Terrain systems
 
----
+Environmental structures
 
-## Contributing
+Future updates will introduce species behavior, ecosystem dynamics, and interactive simulation controls.
 
+Contributing
 Contributions, ideas, and discussions are welcome.
 
-1. Fork the repository  
-2. Create a feature branch  
-3. Submit a pull request with a clear description of the changes
+Fork the repository
 
----
+Create a feature branch
 
-## License
+Submit a pull request with a clear description of the changes
 
-This project is open-source and available under the **MIT License**.
+License
+This project is open-source and available under the MIT License.
