@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.LightTransport;
 
 public class HerbivoreStats : MonoBehaviour
 {
