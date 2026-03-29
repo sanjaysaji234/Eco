@@ -44,6 +44,8 @@ Select the correct Editor version and wait for Unity to import assets and resolv
 
 Open the main scene located in Assets/Scenes/.
 
+Final executable game file is Eco\Executable\Eco
+
 Project Structure
 /Scripts/Grid: Contains logic for hexagonal math and procedural generation.
 
@@ -63,6 +65,7 @@ Project Structure
 ### Carnivore Behavior
 - Predator–prey interactions
 - Hunting strategies
+- Reproduction
 
 
 ### Plant Systems
@@ -98,6 +101,7 @@ This project aims to bridge the gap between complex ecological theory and practi
 
 - **Unity**
 - **C#**
+- **Blender**
 - **Procedural generation using Perlin noise**
 - **Hexagonal grid world simulation**
 
@@ -105,15 +109,8 @@ This project aims to bridge the gap between complex ecological theory and practi
 
 ## Project Status
 
-**Early Development**
-
-Current development is focused on:
-
-- World generation
-- Terrain systems
-- Environmental structures
-
-Future updates will introduce **species behavior, ecosystem dynamics, and interactive simulation controls**.
+**Ready to be Launched**
+Done adding most of the mechanics and the project is ready to be explored
 
 ---
 
