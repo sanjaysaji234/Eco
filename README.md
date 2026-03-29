@@ -22,7 +22,7 @@ The project is designed both as a **learning tool and an experimental sandbox** 
 - Open-source project designed for experimentation
 
 ---
-##Prerequisites
+## Prerequisites
 Unity Version: 2022.3 LTS (Recommended)
 
 Git: Installed on your local machine
